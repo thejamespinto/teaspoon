@@ -11,7 +11,7 @@ module Teaspoon
 
     include Aruba::Api
 
-    def teaspoon_test_app(gem = '', local = false)
+    def teaspoon_test_app(gem = "", local = !ENV["TRAVIS"])
       set_env("TEASPOON_ENV", nil)
       unset_bundler_env_vars
 
